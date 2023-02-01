@@ -10,7 +10,7 @@ class BoardApi {
     //final response = await _client.get(Uri.parse('$baseUrl/query.php'));
     // SPC TMS mobile test(PVC url)
     final url = Uri.parse(
-        'https://tmsqa.samlipgf.co.kr/driverAppService/searchLocationsForRegixxxxxxxxxxxxxxxxxx');
+        'https://tmsqa.xxxxx.co.kr/driverAppService/searchLocationsForRegixxxxxxxxxxxxxxxxxx');
     final response = await _client.post(
       url,
       headers: <String, String>{
