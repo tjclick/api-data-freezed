@@ -10,18 +10,18 @@ class BoardApi {
     //final response = await _client.get(Uri.parse('$baseUrl/query.php'));
     // SPC TMS mobile test(PVC url)
     final url = Uri.parse(
-        'https://tmsqa.samlipgf.co.kr/driverAppService/searchLocationsForRegisterManualContainer');
+        'https://tmsqa.samlipgf.co.kr/driverAppService/searchLocationsForRegixxxxxxxxxxxxxxxxxx');
     final response = await _client.post(
       url,
       headers: <String, String>{
         //'Content-Type': 'application/x-www-form-urlencoded',
-        'USERID': 'VEVTVERSVlI=',
-        'CRTFK': '20230110001003.74819453677458031764608059833657472235',
+        'USERID': 'VEVxxxxxxxxxxxx',
+        'CRTFK': '20230110001003.748194536xxxxxxxxxxxxxxxxxxx',
       },
       body: <String, String>{
-        'USERID': 'TESTDRVR',
+        'USERID': 'TESTxxx',
         'LOC_CD': '',
-        'LOC_NM': '광주',
+        'LOC_NM': 'xxxx',
       },
     );
 
