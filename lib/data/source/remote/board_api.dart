@@ -7,7 +7,9 @@ class BoardApi {
   static const baseUrl = 'http://10.0.2.2:9001';
 
   Future<http.Response> getAllList() async {
-    //final response = await _client.get(Uri.parse('$baseUrl/query.php'));
+    //final response = await _client.get(Uri.parse('$baseUrl/query.php'))
+    //
+    // POST 방식으로 파라미터 전송;
     // SPC TMS mobile test(PVC url)
     final url = Uri.parse(
         'https://tmsqa.samlipgf.co.kr/driverAppService/searchLocationsForRegisterManualContainer');
