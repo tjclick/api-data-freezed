@@ -1,38 +1,51 @@
+import 'dart:convert';
+
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 class BoardApi {
   final http.Client _client;
 
   BoardApi({http.Client? client}) : _client = (client ?? http.Client());
-  static const baseUrl = 'http://10.0.2.2:9001';
 
-  Future<http.Response> getAllList() async {
-    //final response = await _client.get(Uri.parse('$baseUrl/query.php'))
-    //
-    // POST 방식으로 파라미터 전송;
-    // SPC TMS mobile test(PVC url)
-    final url = Uri.parse(
-        'https://tmsqa.samlipgf.co.kr/driverAppService/searchLocationsForRegisterManualContainer');
+  static const baseUrl =
+      'https://tmsqa.samlipgf.co.kr/driverAppService/searchLocationsForRegisterManualContainer';
+  static const HUserID = 'VEVTVERSVlI=';
+  static const HUserKey =
+      '20230110001003.74819453677458031764608059833657472235';
+
+  //Future<http.Response> getAllList() async {
+  //final response = await _client.get(Uri.parse('$baseUrl/query.php'))
+
+  // POST 방식으로 파라미터 전송;
+  // SPC TMS mobile test(PVC url)
+  // final response = await _client.post(
+  //   Uri.parse('$baseUrl'),
+  //   headers: <String, String>{'USERID': '$HUserID', 'CRTFK': '$HUserKey'},
+  //   body: <String, String>{
+  //     'USERID': 'TESTDRVR',
+  //     //'LOC_CD': '',
+  //     'LOC_NM': '$kWord'
+  //   },
+  // );
+
+  //return response;
+  //}
+
+  Future<http.Response> search(String SEARCH_KEYWORD) async {
+    if (SEARCH_KEYWORD == '' || SEARCH_KEYWORD.length == 0)
+      SEARCH_KEYWORD = '광주';
+
     final response = await _client.post(
-      url,
-      headers: <String, String>{
-        //'Content-Type': 'application/x-www-form-urlencoded',
-        'USERID': 'VEVTVERSVlI=',
-        'CRTFK': '20230110001003.74819453677458031764608059833657472235',
-      },
+      Uri.parse('$baseUrl'),
+      headers: <String, String>{'USERID': '$HUserID', 'CRTFK': '$HUserKey'},
       body: <String, String>{
         'USERID': 'TESTDRVR',
-        'LOC_CD': '',
-        'LOC_NM': '광주',
+        //'LOC_CD': '',
+        'LOC_NM': '$SEARCH_KEYWORD'
       },
     );
 
-    return response;
-  }
-
-  Future<http.Response> insert(String LOC_NM) async {
-    final response =
-        await _client.get(Uri.parse('$baseUrl/insert.php?content=$LOC_NM'));
     return response;
   }
 

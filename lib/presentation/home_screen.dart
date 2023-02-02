@@ -45,14 +45,23 @@ class _HomeScreenState extends State<HomeScreen> {
               if (result != null) {}
             },
             child: ListTile(
-              title: Text('${post.LOC_CD} : ${post.LOC_NM}'),
-              //subtitle: Text(post.updateTime),
+              title: Text(
+                '${post.LOC_CD}',
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              subtitle: Text(
+                '${post.LOC_NM}',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.brown,
+                ),
+              ),
             ),
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.search),
         onPressed: () {
           showDialog(
               context: context,
@@ -79,10 +88,10 @@ class _HomeScreenState extends State<HomeScreen> {
       actions: [
         TextButton(
           onPressed: () {
-            viewModel.onEvent(HomeEvent.insert(_controller.text));
+            viewModel.onEvent(HomeEvent.search(_controller.text));
             Navigator.pop(context, true);
           },
-          child: const Text('Insert'),
+          child: const Text('Search'),
         ),
       ],
     );

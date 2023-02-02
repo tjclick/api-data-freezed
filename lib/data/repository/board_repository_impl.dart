@@ -10,21 +10,26 @@ class BoardRepositoryImpl implements BoardRepository {
   BoardRepositoryImpl({required this.api});
 
   @override
-  Future add(String LOC_NM) async {
-    await api.insert(LOC_NM);
-  }
+  Future<List<Post>> search(String SEARCH_KEYWORD) async {
+    final response = await api.search(SEARCH_KEYWORD);
 
-  @override
-  Future<List<Post>> getPosts() async {
-    final response = await api.getAllList();
-
-    //final Iterable json = jsonDecode(response.body);
-    // API response {"data": {"dataset": [{"LOC_CD":"x111","LOC_NM":"y222"}, {"LOC_CD":"x333","LOC_NM":"y444"}, ]}}
     final String jsonData = response.body;
     final Iterable json = jsonDecode(jsonData)['data']['dataSet'];
     //print(json);
     return json.map((e) => Post.fromJson(e)).toList();
   }
+
+  // @override
+  // Future<List<Post>> getPosts() async {
+  //   final response = await api.getAllList();
+
+  //   //final Iterable json = jsonDecode(response.body);
+  //   // API response {"data": {"dataset": [{"LOC_CD":"x111","LOC_NM":"y222"}, {"LOC_CD":"x333","LOC_NM":"y444"}, ]}}
+  //   final String jsonData = response.body;
+  //   final Iterable json = jsonDecode(jsonData)['data']['dataSet'];
+  //   //print(json);
+  //   return json.map((e) => Post.fromJson(e)).toList();
+  // }
 
   @override
   Future remove(String LOC_CD) async {

@@ -18,13 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$HomeEventTearOff {
   const _$HomeEventTearOff();
 
-  Query<T> query<T>() {
-    return Query<T>();
-  }
-
-  Insert<T> insert<T>(String LOC_NM) {
-    return Insert<T>(
-      LOC_NM,
+  Search<T> search<T>(String SEARCH_KEYWORD) {
+    return Search<T>(
+      SEARCH_KEYWORD,
     );
   }
 
@@ -49,24 +45,21 @@ const $HomeEvent = _$HomeEventTearOff();
 mixin _$HomeEvent<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() query,
-    required TResult Function(String LOC_NM) insert,
+    required TResult Function(String SEARCH_KEYWORD) search,
     required TResult Function(String LOC_CD, String LOC_NM) update,
     required TResult Function(String LOC_CD) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? query,
-    TResult Function(String LOC_NM)? insert,
+    TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
     TResult Function(String LOC_CD)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? query,
-    TResult Function(String LOC_NM)? insert,
+    TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
     TResult Function(String LOC_CD)? delete,
     required TResult orElse(),
@@ -74,24 +67,21 @@ mixin _$HomeEvent<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Query<T> value) query,
-    required TResult Function(Insert<T> value) insert,
+    required TResult Function(Search<T> value) search,
     required TResult Function(Update<T> value) update,
     required TResult Function(Delete<T> value) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Query<T> value)? query,
-    TResult Function(Insert<T> value)? insert,
+    TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
     TResult Function(Delete<T> value)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Query<T> value)? query,
-    TResult Function(Insert<T> value)? insert,
+    TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
     TResult Function(Delete<T> value)? delete,
     required TResult orElse(),
@@ -116,143 +106,29 @@ class _$HomeEventCopyWithImpl<T, $Res> implements $HomeEventCopyWith<T, $Res> {
 }
 
 /// @nodoc
-abstract class $QueryCopyWith<T, $Res> {
-  factory $QueryCopyWith(Query<T> value, $Res Function(Query<T>) then) =
-      _$QueryCopyWithImpl<T, $Res>;
+abstract class $SearchCopyWith<T, $Res> {
+  factory $SearchCopyWith(Search<T> value, $Res Function(Search<T>) then) =
+      _$SearchCopyWithImpl<T, $Res>;
+  $Res call({String SEARCH_KEYWORD});
 }
 
 /// @nodoc
-class _$QueryCopyWithImpl<T, $Res> extends _$HomeEventCopyWithImpl<T, $Res>
-    implements $QueryCopyWith<T, $Res> {
-  _$QueryCopyWithImpl(Query<T> _value, $Res Function(Query<T>) _then)
-      : super(_value, (v) => _then(v as Query<T>));
+class _$SearchCopyWithImpl<T, $Res> extends _$HomeEventCopyWithImpl<T, $Res>
+    implements $SearchCopyWith<T, $Res> {
+  _$SearchCopyWithImpl(Search<T> _value, $Res Function(Search<T>) _then)
+      : super(_value, (v) => _then(v as Search<T>));
 
   @override
-  Query<T> get _value => super._value as Query<T>;
-}
-
-/// @nodoc
-
-class _$Query<T> implements Query<T> {
-  const _$Query();
-
-  @override
-  String toString() {
-    return 'HomeEvent<$T>.query()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Query<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() query,
-    required TResult Function(String LOC_NM) insert,
-    required TResult Function(String LOC_CD, String LOC_NM) update,
-    required TResult Function(String LOC_CD) delete,
-  }) {
-    return query();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? query,
-    TResult Function(String LOC_NM)? insert,
-    TResult Function(String LOC_CD, String LOC_NM)? update,
-    TResult Function(String LOC_CD)? delete,
-  }) {
-    return query?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? query,
-    TResult Function(String LOC_NM)? insert,
-    TResult Function(String LOC_CD, String LOC_NM)? update,
-    TResult Function(String LOC_CD)? delete,
-    required TResult orElse(),
-  }) {
-    if (query != null) {
-      return query();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Query<T> value) query,
-    required TResult Function(Insert<T> value) insert,
-    required TResult Function(Update<T> value) update,
-    required TResult Function(Delete<T> value) delete,
-  }) {
-    return query(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Query<T> value)? query,
-    TResult Function(Insert<T> value)? insert,
-    TResult Function(Update<T> value)? update,
-    TResult Function(Delete<T> value)? delete,
-  }) {
-    return query?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Query<T> value)? query,
-    TResult Function(Insert<T> value)? insert,
-    TResult Function(Update<T> value)? update,
-    TResult Function(Delete<T> value)? delete,
-    required TResult orElse(),
-  }) {
-    if (query != null) {
-      return query(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Query<T> implements HomeEvent<T> {
-  const factory Query() = _$Query<T>;
-}
-
-/// @nodoc
-abstract class $InsertCopyWith<T, $Res> {
-  factory $InsertCopyWith(Insert<T> value, $Res Function(Insert<T>) then) =
-      _$InsertCopyWithImpl<T, $Res>;
-  $Res call({String LOC_NM});
-}
-
-/// @nodoc
-class _$InsertCopyWithImpl<T, $Res> extends _$HomeEventCopyWithImpl<T, $Res>
-    implements $InsertCopyWith<T, $Res> {
-  _$InsertCopyWithImpl(Insert<T> _value, $Res Function(Insert<T>) _then)
-      : super(_value, (v) => _then(v as Insert<T>));
-
-  @override
-  Insert<T> get _value => super._value as Insert<T>;
+  Search<T> get _value => super._value as Search<T>;
 
   @override
   $Res call({
-    Object? LOC_NM = freezed,
+    Object? SEARCH_KEYWORD = freezed,
   }) {
-    return _then(Insert<T>(
-      LOC_NM == freezed
-          ? _value.LOC_NM
-          : LOC_NM // ignore: cast_nullable_to_non_nullable
+    return _then(Search<T>(
+      SEARCH_KEYWORD == freezed
+          ? _value.SEARCH_KEYWORD
+          : SEARCH_KEYWORD // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -260,67 +136,65 @@ class _$InsertCopyWithImpl<T, $Res> extends _$HomeEventCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$Insert<T> implements Insert<T> {
-  const _$Insert(this.LOC_NM);
+class _$Search<T> implements Search<T> {
+  const _$Search(this.SEARCH_KEYWORD);
 
   @override
-  final String LOC_NM;
+  final String SEARCH_KEYWORD;
 
   @override
   String toString() {
-    return 'HomeEvent<$T>.insert(LOC_NM: $LOC_NM)';
+    return 'HomeEvent<$T>.search(SEARCH_KEYWORD: $SEARCH_KEYWORD)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Insert<T> &&
-            const DeepCollectionEquality().equals(other.LOC_NM, LOC_NM));
+            other is Search<T> &&
+            const DeepCollectionEquality()
+                .equals(other.SEARCH_KEYWORD, SEARCH_KEYWORD));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(LOC_NM));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(SEARCH_KEYWORD));
 
   @JsonKey(ignore: true)
   @override
-  $InsertCopyWith<T, Insert<T>> get copyWith =>
-      _$InsertCopyWithImpl<T, Insert<T>>(this, _$identity);
+  $SearchCopyWith<T, Search<T>> get copyWith =>
+      _$SearchCopyWithImpl<T, Search<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() query,
-    required TResult Function(String LOC_NM) insert,
+    required TResult Function(String SEARCH_KEYWORD) search,
     required TResult Function(String LOC_CD, String LOC_NM) update,
     required TResult Function(String LOC_CD) delete,
   }) {
-    return insert(LOC_NM);
+    return search(SEARCH_KEYWORD);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? query,
-    TResult Function(String LOC_NM)? insert,
+    TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
     TResult Function(String LOC_CD)? delete,
   }) {
-    return insert?.call(LOC_NM);
+    return search?.call(SEARCH_KEYWORD);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? query,
-    TResult Function(String LOC_NM)? insert,
+    TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
     TResult Function(String LOC_CD)? delete,
     required TResult orElse(),
   }) {
-    if (insert != null) {
-      return insert(LOC_NM);
+    if (search != null) {
+      return search(SEARCH_KEYWORD);
     }
     return orElse();
   }
@@ -328,47 +202,44 @@ class _$Insert<T> implements Insert<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Query<T> value) query,
-    required TResult Function(Insert<T> value) insert,
+    required TResult Function(Search<T> value) search,
     required TResult Function(Update<T> value) update,
     required TResult Function(Delete<T> value) delete,
   }) {
-    return insert(this);
+    return search(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Query<T> value)? query,
-    TResult Function(Insert<T> value)? insert,
+    TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
     TResult Function(Delete<T> value)? delete,
   }) {
-    return insert?.call(this);
+    return search?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Query<T> value)? query,
-    TResult Function(Insert<T> value)? insert,
+    TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
     TResult Function(Delete<T> value)? delete,
     required TResult orElse(),
   }) {
-    if (insert != null) {
-      return insert(this);
+    if (search != null) {
+      return search(this);
     }
     return orElse();
   }
 }
 
-abstract class Insert<T> implements HomeEvent<T> {
-  const factory Insert(String LOC_NM) = _$Insert<T>;
+abstract class Search<T> implements HomeEvent<T> {
+  const factory Search(String SEARCH_KEYWORD) = _$Search<T>;
 
-  String get LOC_NM;
+  String get SEARCH_KEYWORD;
   @JsonKey(ignore: true)
-  $InsertCopyWith<T, Insert<T>> get copyWith =>
+  $SearchCopyWith<T, Search<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -444,8 +315,7 @@ class _$Update<T> implements Update<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() query,
-    required TResult Function(String LOC_NM) insert,
+    required TResult Function(String SEARCH_KEYWORD) search,
     required TResult Function(String LOC_CD, String LOC_NM) update,
     required TResult Function(String LOC_CD) delete,
   }) {
@@ -455,8 +325,7 @@ class _$Update<T> implements Update<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? query,
-    TResult Function(String LOC_NM)? insert,
+    TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
     TResult Function(String LOC_CD)? delete,
   }) {
@@ -466,8 +335,7 @@ class _$Update<T> implements Update<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? query,
-    TResult Function(String LOC_NM)? insert,
+    TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
     TResult Function(String LOC_CD)? delete,
     required TResult orElse(),
@@ -481,8 +349,7 @@ class _$Update<T> implements Update<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Query<T> value) query,
-    required TResult Function(Insert<T> value) insert,
+    required TResult Function(Search<T> value) search,
     required TResult Function(Update<T> value) update,
     required TResult Function(Delete<T> value) delete,
   }) {
@@ -492,8 +359,7 @@ class _$Update<T> implements Update<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Query<T> value)? query,
-    TResult Function(Insert<T> value)? insert,
+    TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
     TResult Function(Delete<T> value)? delete,
   }) {
@@ -503,8 +369,7 @@ class _$Update<T> implements Update<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Query<T> value)? query,
-    TResult Function(Insert<T> value)? insert,
+    TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
     TResult Function(Delete<T> value)? delete,
     required TResult orElse(),
@@ -588,8 +453,7 @@ class _$Delete<T> implements Delete<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() query,
-    required TResult Function(String LOC_NM) insert,
+    required TResult Function(String SEARCH_KEYWORD) search,
     required TResult Function(String LOC_CD, String LOC_NM) update,
     required TResult Function(String LOC_CD) delete,
   }) {
@@ -599,8 +463,7 @@ class _$Delete<T> implements Delete<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? query,
-    TResult Function(String LOC_NM)? insert,
+    TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
     TResult Function(String LOC_CD)? delete,
   }) {
@@ -610,8 +473,7 @@ class _$Delete<T> implements Delete<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? query,
-    TResult Function(String LOC_NM)? insert,
+    TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
     TResult Function(String LOC_CD)? delete,
     required TResult orElse(),
@@ -625,8 +487,7 @@ class _$Delete<T> implements Delete<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Query<T> value) query,
-    required TResult Function(Insert<T> value) insert,
+    required TResult Function(Search<T> value) search,
     required TResult Function(Update<T> value) update,
     required TResult Function(Delete<T> value) delete,
   }) {
@@ -636,8 +497,7 @@ class _$Delete<T> implements Delete<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Query<T> value)? query,
-    TResult Function(Insert<T> value)? insert,
+    TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
     TResult Function(Delete<T> value)? delete,
   }) {
@@ -647,8 +507,7 @@ class _$Delete<T> implements Delete<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Query<T> value)? query,
-    TResult Function(Insert<T> value)? insert,
+    TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
     TResult Function(Delete<T> value)? delete,
     required TResult orElse(),

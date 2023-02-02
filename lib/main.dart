@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:api_data_freezed/data/repository/board_repository_impl.dart';
 import 'package:api_data_freezed/data/source/remote/board_api.dart';
+import 'package:api_data_freezed/lib_color_schemes.g.dart';
 import 'package:api_data_freezed/presentation/home_screen.dart';
 import 'package:api_data_freezed/presentation/home_view_model.dart';
 import 'package:flutter/material.dart';
@@ -27,8 +28,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        useMaterial3: true,
+        colorScheme: lightColorScheme,
       ),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorScheme: darkColorScheme,
+      ),
+      themeMode: ThemeMode.system,
       home: HomeScreen(),
     );
   }

@@ -11,13 +11,14 @@ class HomeViewModel with ChangeNotifier {
   HomeState get state => _state;
 
   HomeViewModel(this._repository) {
-    _getPosts();
+    //_getPosts();
+    _search('');
   }
 
   void onEvent(HomeEvent event) {
     event.when(
-      query: _getPosts,
-      insert: _insert,
+      //query: _getPosts,
+      search: _search,
       update: _update,
       delete: _delete,
     );
@@ -25,30 +26,37 @@ class HomeViewModel with ChangeNotifier {
 
   Future _delete(String LOC_CD) async {
     await _repository.remove(LOC_CD);
-    await _getPosts();
+    //await _getPosts();
   }
 
   Future _update(String LOC_CD, String LOC_NM) async {
     await _repository.update(LOC_CD, LOC_NM);
-    await _getPosts();
+    //await _getPosts();
   }
 
-  Future _insert(String LOC_NM) async {
-    await _repository.add(LOC_NM);
-    await _getPosts();
-  }
-
-  Future _getPosts() async {
+  Future _search(String SEARCH_KEYWORD) async {
     _state = state.copyWith(isLoading: true);
     notifyListeners();
 
-    final result = await _repository.getPosts()
-      ..sort((a, b) => -a.LOC_CD.compareTo(b.LOC_CD));
-
+    final result = await _repository.search(SEARCH_KEYWORD);
     _state = state.copyWith(
       isLoading: false,
       posts: result,
     );
     notifyListeners();
   }
+
+  // Future _getPosts() async {
+  //   _state = state.copyWith(isLoading: true);
+  //   notifyListeners();
+
+  //   final result = await _repository.getPosts()
+  //     ..sort((a, b) => -a.LOC_CD.compareTo(b.LOC_CD));
+
+  //   _state = state.copyWith(
+  //     isLoading: false,
+  //     posts: result,
+  //   );
+  //   notifyListeners();
+  // }
 }
