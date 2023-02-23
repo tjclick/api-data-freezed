@@ -8,8 +8,7 @@ class BoardApi {
 
   BoardApi({http.Client? client}) : _client = (client ?? http.Client());
 
-  static const baseUrl =
-      'https://tmsqa.samlipgf.co.kr/driverAppService/searchLocationsForRegisterManualContainer';
+  static const baseUrl = 'https://tmsqa.samlipgf.co.kr/driverAppService';
   static const HUserID = 'VEVTVERSVlI=';
   static const HUserKey =
       '20230110001003.74819453677458031764608059833657472235';
@@ -37,7 +36,7 @@ class BoardApi {
       SEARCH_KEYWORD = '광주';
 
     final response = await _client.post(
-      Uri.parse('$baseUrl'),
+      Uri.parse('$baseUrl/searchLocationsForRegisterManualContainer'),
       headers: <String, String>{'USERID': '$HUserID', 'CRTFK': '$HUserKey'},
       body: <String, String>{
         'USERID': 'TESTDRVR',
@@ -50,8 +49,16 @@ class BoardApi {
   }
 
   Future<http.Response> update(String LOC_CD, String LOC_NM) async {
-    final response = await _client
-        .get(Uri.parse('$baseUrl/update.php?id=$LOC_CD&content=$LOC_NM'));
+    final response = await _client.post(
+      Uri.parse('$baseUrl/fetchManualContainers'),
+      headers: <String, String>{'USERID': '$HUserID', 'CRTFK': '$HUserKey'},
+      body: <String, String>{
+        "USERID": "S3961",
+        "VEH_ID": "3961",
+        "DLVRY_DT": "20221201"
+      },
+    );
+
     return response;
   }
 

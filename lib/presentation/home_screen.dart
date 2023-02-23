@@ -1,8 +1,10 @@
 import 'package:api_data_freezed/domain/model/post.dart';
 import 'package:api_data_freezed/presentation/home_event.dart';
 import 'package:api_data_freezed/presentation/home_view_model.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -27,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('DATA API freezed'),
+        title: const Text('배송처 리스트'),
       ),
       body: ListView.builder(
         itemCount: state.posts.length,
@@ -46,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             child: ListTile(
               title: Text(
-                '${post.LOC_CD}',
+                'Code: ${post.LOC_CD}',
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               subtitle: Text(
@@ -114,17 +116,16 @@ class _HomeScreenState extends State<HomeScreen> {
       actions: [
         TextButton(
           onPressed: () {
-            viewModel.onEvent(HomeEvent.delete(post.LOC_CD));
-            Navigator.pop(context, true);
-          },
-          child: const Text('Delete'),
-        ),
-        TextButton(
-          onPressed: () {
             viewModel.onEvent(HomeEvent.update(post.LOC_CD, _controller.text));
             Navigator.pop(context, true);
           },
-          child: const Text('Update'),
+          child: const Text('ReturnPVC'),
+        ),
+        TextButton(
+          onPressed: () {
+            //viewModel.onEvent(HomeEvent.delete(post.LOC_CD));
+          },
+          child: const Text('Delete'),
         ),
       ],
     );

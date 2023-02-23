@@ -22,10 +22,18 @@ Post _$PostFromJson(Map<String, dynamic> json) {
 class _$PostTearOff {
   const _$PostTearOff();
 
-  _Post call({required String LOC_CD, required String LOC_NM}) {
+  _Post call(
+      {required String LOC_CD,
+      required String LOC_NM,
+      int? IN_PVC_CNT,
+      int? IN_PBX_CNT,
+      int? OUT_PVC_CNT}) {
     return _Post(
       LOC_CD: LOC_CD,
       LOC_NM: LOC_NM,
+      IN_PVC_CNT: IN_PVC_CNT,
+      IN_PBX_CNT: IN_PBX_CNT,
+      OUT_PVC_CNT: OUT_PVC_CNT,
     );
   }
 
@@ -42,6 +50,9 @@ mixin _$Post {
   String get LOC_CD =>
       throw _privateConstructorUsedError; //@JsonKey(name: 'update_time') required String updateTime,
   String get LOC_NM => throw _privateConstructorUsedError;
+  int? get IN_PVC_CNT => throw _privateConstructorUsedError;
+  int? get IN_PBX_CNT => throw _privateConstructorUsedError;
+  int? get OUT_PVC_CNT => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,7 +63,12 @@ mixin _$Post {
 abstract class $PostCopyWith<$Res> {
   factory $PostCopyWith(Post value, $Res Function(Post) then) =
       _$PostCopyWithImpl<$Res>;
-  $Res call({String LOC_CD, String LOC_NM});
+  $Res call(
+      {String LOC_CD,
+      String LOC_NM,
+      int? IN_PVC_CNT,
+      int? IN_PBX_CNT,
+      int? OUT_PVC_CNT});
 }
 
 /// @nodoc
@@ -67,6 +83,9 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
   $Res call({
     Object? LOC_CD = freezed,
     Object? LOC_NM = freezed,
+    Object? IN_PVC_CNT = freezed,
+    Object? IN_PBX_CNT = freezed,
+    Object? OUT_PVC_CNT = freezed,
   }) {
     return _then(_value.copyWith(
       LOC_CD: LOC_CD == freezed
@@ -77,6 +96,18 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
           ? _value.LOC_NM
           : LOC_NM // ignore: cast_nullable_to_non_nullable
               as String,
+      IN_PVC_CNT: IN_PVC_CNT == freezed
+          ? _value.IN_PVC_CNT
+          : IN_PVC_CNT // ignore: cast_nullable_to_non_nullable
+              as int?,
+      IN_PBX_CNT: IN_PBX_CNT == freezed
+          ? _value.IN_PBX_CNT
+          : IN_PBX_CNT // ignore: cast_nullable_to_non_nullable
+              as int?,
+      OUT_PVC_CNT: OUT_PVC_CNT == freezed
+          ? _value.OUT_PVC_CNT
+          : OUT_PVC_CNT // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -86,7 +117,12 @@ abstract class _$PostCopyWith<$Res> implements $PostCopyWith<$Res> {
   factory _$PostCopyWith(_Post value, $Res Function(_Post) then) =
       __$PostCopyWithImpl<$Res>;
   @override
-  $Res call({String LOC_CD, String LOC_NM});
+  $Res call(
+      {String LOC_CD,
+      String LOC_NM,
+      int? IN_PVC_CNT,
+      int? IN_PBX_CNT,
+      int? OUT_PVC_CNT});
 }
 
 /// @nodoc
@@ -102,6 +138,9 @@ class __$PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
   $Res call({
     Object? LOC_CD = freezed,
     Object? LOC_NM = freezed,
+    Object? IN_PVC_CNT = freezed,
+    Object? IN_PBX_CNT = freezed,
+    Object? OUT_PVC_CNT = freezed,
   }) {
     return _then(_Post(
       LOC_CD: LOC_CD == freezed
@@ -112,6 +151,18 @@ class __$PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
           ? _value.LOC_NM
           : LOC_NM // ignore: cast_nullable_to_non_nullable
               as String,
+      IN_PVC_CNT: IN_PVC_CNT == freezed
+          ? _value.IN_PVC_CNT
+          : IN_PVC_CNT // ignore: cast_nullable_to_non_nullable
+              as int?,
+      IN_PBX_CNT: IN_PBX_CNT == freezed
+          ? _value.IN_PBX_CNT
+          : IN_PBX_CNT // ignore: cast_nullable_to_non_nullable
+              as int?,
+      OUT_PVC_CNT: OUT_PVC_CNT == freezed
+          ? _value.OUT_PVC_CNT
+          : OUT_PVC_CNT // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -119,7 +170,12 @@ class __$PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Post implements _Post {
-  _$_Post({required this.LOC_CD, required this.LOC_NM});
+  _$_Post(
+      {required this.LOC_CD,
+      required this.LOC_NM,
+      this.IN_PVC_CNT,
+      this.IN_PBX_CNT,
+      this.OUT_PVC_CNT});
 
   factory _$_Post.fromJson(Map<String, dynamic> json) => _$$_PostFromJson(json);
 
@@ -127,10 +183,16 @@ class _$_Post implements _Post {
   final String LOC_CD;
   @override //@JsonKey(name: 'update_time') required String updateTime,
   final String LOC_NM;
+  @override
+  final int? IN_PVC_CNT;
+  @override
+  final int? IN_PBX_CNT;
+  @override
+  final int? OUT_PVC_CNT;
 
   @override
   String toString() {
-    return 'Post(LOC_CD: $LOC_CD, LOC_NM: $LOC_NM)';
+    return 'Post(LOC_CD: $LOC_CD, LOC_NM: $LOC_NM, IN_PVC_CNT: $IN_PVC_CNT, IN_PBX_CNT: $IN_PBX_CNT, OUT_PVC_CNT: $OUT_PVC_CNT)';
   }
 
   @override
@@ -139,14 +201,23 @@ class _$_Post implements _Post {
         (other.runtimeType == runtimeType &&
             other is _Post &&
             const DeepCollectionEquality().equals(other.LOC_CD, LOC_CD) &&
-            const DeepCollectionEquality().equals(other.LOC_NM, LOC_NM));
+            const DeepCollectionEquality().equals(other.LOC_NM, LOC_NM) &&
+            const DeepCollectionEquality()
+                .equals(other.IN_PVC_CNT, IN_PVC_CNT) &&
+            const DeepCollectionEquality()
+                .equals(other.IN_PBX_CNT, IN_PBX_CNT) &&
+            const DeepCollectionEquality()
+                .equals(other.OUT_PVC_CNT, OUT_PVC_CNT));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(LOC_CD),
-      const DeepCollectionEquality().hash(LOC_NM));
+      const DeepCollectionEquality().hash(LOC_NM),
+      const DeepCollectionEquality().hash(IN_PVC_CNT),
+      const DeepCollectionEquality().hash(IN_PBX_CNT),
+      const DeepCollectionEquality().hash(OUT_PVC_CNT));
 
   @JsonKey(ignore: true)
   @override
@@ -160,7 +231,12 @@ class _$_Post implements _Post {
 }
 
 abstract class _Post implements Post {
-  factory _Post({required String LOC_CD, required String LOC_NM}) = _$_Post;
+  factory _Post(
+      {required String LOC_CD,
+      required String LOC_NM,
+      int? IN_PVC_CNT,
+      int? IN_PBX_CNT,
+      int? OUT_PVC_CNT}) = _$_Post;
 
   factory _Post.fromJson(Map<String, dynamic> json) = _$_Post.fromJson;
 
@@ -168,6 +244,12 @@ abstract class _Post implements Post {
   String get LOC_CD;
   @override //@JsonKey(name: 'update_time') required String updateTime,
   String get LOC_NM;
+  @override
+  int? get IN_PVC_CNT;
+  @override
+  int? get IN_PBX_CNT;
+  @override
+  int? get OUT_PVC_CNT;
   @override
   @JsonKey(ignore: true)
   _$PostCopyWith<_Post> get copyWith => throw _privateConstructorUsedError;

@@ -37,7 +37,13 @@ class BoardRepositoryImpl implements BoardRepository {
   }
 
   @override
-  Future update(String LOC_CD, String LOC_NM) async {
-    await api.update(LOC_CD, LOC_NM);
+  Future<List<Post>> update(String LOC_CD, String LOC_NM) async {
+    //await api.update(LOC_CD, LOC_NM);
+    final response = await api.update(LOC_CD, LOC_NM);
+
+    final String jsonData = response.body;
+    final Iterable json = jsonDecode(jsonData)['data']['dataSet'];
+    //print(json);
+    return json.map((e) => Post.fromJson(e)).toList();
   }
 }

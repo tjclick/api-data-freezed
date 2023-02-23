@@ -2,7 +2,6 @@ import 'package:api_data_freezed/domain/model/post.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'home_state.freezed.dart';
-
 part 'home_state.g.dart';
 
 @freezed

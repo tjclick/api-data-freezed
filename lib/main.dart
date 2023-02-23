@@ -5,8 +5,10 @@ import 'package:api_data_freezed/data/source/remote/board_api.dart';
 import 'package:api_data_freezed/lib_color_schemes.g.dart';
 import 'package:api_data_freezed/presentation/home_screen.dart';
 import 'package:api_data_freezed/presentation/home_view_model.dart';
+import 'package:api_data_freezed/presentation/return_pvc.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 
 void main() {
   HttpOverrides.global = NoCheckCertificateHttpOverrides();
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         useMaterial3: true,
@@ -36,7 +38,14 @@ class MyApp extends StatelessWidget {
         colorScheme: darkColorScheme,
       ),
       themeMode: ThemeMode.system,
-      home: HomeScreen(),
+      initialRoute: "/",
+      getPages: [
+        GetPage(name: "/", page: () => HomeScreen()),
+        GetPage(name: "/drivers", page: () => ReturnPvc()),
+        //GetPage(name: "/map", page: () => PageMapApp()),
+        //GetPage(name: "/para/:ID4", page: () => PageParaApp()),
+      ],
+      //home: HomeScreen(),
     );
   }
 }
