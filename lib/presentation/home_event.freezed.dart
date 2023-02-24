@@ -31,8 +31,8 @@ class _$HomeEventTearOff {
     );
   }
 
-  Delete<T> delete<T>(String LOC_CD) {
-    return Delete<T>(
+  Driverinfo<T> driverinfo<T>(String LOC_CD) {
+    return Driverinfo<T>(
       LOC_CD,
     );
   }
@@ -47,21 +47,21 @@ mixin _$HomeEvent<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(String SEARCH_KEYWORD) search,
     required TResult Function(String LOC_CD, String LOC_NM) update,
-    required TResult Function(String LOC_CD) delete,
+    required TResult Function(String LOC_CD) driverinfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
-    TResult Function(String LOC_CD)? delete,
+    TResult Function(String LOC_CD)? driverinfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
-    TResult Function(String LOC_CD)? delete,
+    TResult Function(String LOC_CD)? driverinfo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,21 +69,21 @@ mixin _$HomeEvent<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Search<T> value) search,
     required TResult Function(Update<T> value) update,
-    required TResult Function(Delete<T> value) delete,
+    required TResult Function(Driverinfo<T> value) driverinfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
-    TResult Function(Delete<T> value)? delete,
+    TResult Function(Driverinfo<T> value)? driverinfo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
-    TResult Function(Delete<T> value)? delete,
+    TResult Function(Driverinfo<T> value)? driverinfo,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -170,7 +170,7 @@ class _$Search<T> implements Search<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(String SEARCH_KEYWORD) search,
     required TResult Function(String LOC_CD, String LOC_NM) update,
-    required TResult Function(String LOC_CD) delete,
+    required TResult Function(String LOC_CD) driverinfo,
   }) {
     return search(SEARCH_KEYWORD);
   }
@@ -180,7 +180,7 @@ class _$Search<T> implements Search<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
-    TResult Function(String LOC_CD)? delete,
+    TResult Function(String LOC_CD)? driverinfo,
   }) {
     return search?.call(SEARCH_KEYWORD);
   }
@@ -190,7 +190,7 @@ class _$Search<T> implements Search<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
-    TResult Function(String LOC_CD)? delete,
+    TResult Function(String LOC_CD)? driverinfo,
     required TResult orElse(),
   }) {
     if (search != null) {
@@ -204,7 +204,7 @@ class _$Search<T> implements Search<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Search<T> value) search,
     required TResult Function(Update<T> value) update,
-    required TResult Function(Delete<T> value) delete,
+    required TResult Function(Driverinfo<T> value) driverinfo,
   }) {
     return search(this);
   }
@@ -214,7 +214,7 @@ class _$Search<T> implements Search<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
-    TResult Function(Delete<T> value)? delete,
+    TResult Function(Driverinfo<T> value)? driverinfo,
   }) {
     return search?.call(this);
   }
@@ -224,7 +224,7 @@ class _$Search<T> implements Search<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
-    TResult Function(Delete<T> value)? delete,
+    TResult Function(Driverinfo<T> value)? driverinfo,
     required TResult orElse(),
   }) {
     if (search != null) {
@@ -317,7 +317,7 @@ class _$Update<T> implements Update<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(String SEARCH_KEYWORD) search,
     required TResult Function(String LOC_CD, String LOC_NM) update,
-    required TResult Function(String LOC_CD) delete,
+    required TResult Function(String LOC_CD) driverinfo,
   }) {
     return update(LOC_CD, LOC_NM);
   }
@@ -327,7 +327,7 @@ class _$Update<T> implements Update<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
-    TResult Function(String LOC_CD)? delete,
+    TResult Function(String LOC_CD)? driverinfo,
   }) {
     return update?.call(LOC_CD, LOC_NM);
   }
@@ -337,7 +337,7 @@ class _$Update<T> implements Update<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
-    TResult Function(String LOC_CD)? delete,
+    TResult Function(String LOC_CD)? driverinfo,
     required TResult orElse(),
   }) {
     if (update != null) {
@@ -351,7 +351,7 @@ class _$Update<T> implements Update<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Search<T> value) search,
     required TResult Function(Update<T> value) update,
-    required TResult Function(Delete<T> value) delete,
+    required TResult Function(Driverinfo<T> value) driverinfo,
   }) {
     return update(this);
   }
@@ -361,7 +361,7 @@ class _$Update<T> implements Update<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
-    TResult Function(Delete<T> value)? delete,
+    TResult Function(Driverinfo<T> value)? driverinfo,
   }) {
     return update?.call(this);
   }
@@ -371,7 +371,7 @@ class _$Update<T> implements Update<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
-    TResult Function(Delete<T> value)? delete,
+    TResult Function(Driverinfo<T> value)? driverinfo,
     required TResult orElse(),
   }) {
     if (update != null) {
@@ -392,26 +392,28 @@ abstract class Update<T> implements HomeEvent<T> {
 }
 
 /// @nodoc
-abstract class $DeleteCopyWith<T, $Res> {
-  factory $DeleteCopyWith(Delete<T> value, $Res Function(Delete<T>) then) =
-      _$DeleteCopyWithImpl<T, $Res>;
+abstract class $DriverinfoCopyWith<T, $Res> {
+  factory $DriverinfoCopyWith(
+          Driverinfo<T> value, $Res Function(Driverinfo<T>) then) =
+      _$DriverinfoCopyWithImpl<T, $Res>;
   $Res call({String LOC_CD});
 }
 
 /// @nodoc
-class _$DeleteCopyWithImpl<T, $Res> extends _$HomeEventCopyWithImpl<T, $Res>
-    implements $DeleteCopyWith<T, $Res> {
-  _$DeleteCopyWithImpl(Delete<T> _value, $Res Function(Delete<T>) _then)
-      : super(_value, (v) => _then(v as Delete<T>));
+class _$DriverinfoCopyWithImpl<T, $Res> extends _$HomeEventCopyWithImpl<T, $Res>
+    implements $DriverinfoCopyWith<T, $Res> {
+  _$DriverinfoCopyWithImpl(
+      Driverinfo<T> _value, $Res Function(Driverinfo<T>) _then)
+      : super(_value, (v) => _then(v as Driverinfo<T>));
 
   @override
-  Delete<T> get _value => super._value as Delete<T>;
+  Driverinfo<T> get _value => super._value as Driverinfo<T>;
 
   @override
   $Res call({
     Object? LOC_CD = freezed,
   }) {
-    return _then(Delete<T>(
+    return _then(Driverinfo<T>(
       LOC_CD == freezed
           ? _value.LOC_CD
           : LOC_CD // ignore: cast_nullable_to_non_nullable
@@ -422,22 +424,22 @@ class _$DeleteCopyWithImpl<T, $Res> extends _$HomeEventCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$Delete<T> implements Delete<T> {
-  const _$Delete(this.LOC_CD);
+class _$Driverinfo<T> implements Driverinfo<T> {
+  const _$Driverinfo(this.LOC_CD);
 
   @override
   final String LOC_CD;
 
   @override
   String toString() {
-    return 'HomeEvent<$T>.delete(LOC_CD: $LOC_CD)';
+    return 'HomeEvent<$T>.driverinfo(LOC_CD: $LOC_CD)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Delete<T> &&
+            other is Driverinfo<T> &&
             const DeepCollectionEquality().equals(other.LOC_CD, LOC_CD));
   }
 
@@ -447,17 +449,17 @@ class _$Delete<T> implements Delete<T> {
 
   @JsonKey(ignore: true)
   @override
-  $DeleteCopyWith<T, Delete<T>> get copyWith =>
-      _$DeleteCopyWithImpl<T, Delete<T>>(this, _$identity);
+  $DriverinfoCopyWith<T, Driverinfo<T>> get copyWith =>
+      _$DriverinfoCopyWithImpl<T, Driverinfo<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String SEARCH_KEYWORD) search,
     required TResult Function(String LOC_CD, String LOC_NM) update,
-    required TResult Function(String LOC_CD) delete,
+    required TResult Function(String LOC_CD) driverinfo,
   }) {
-    return delete(LOC_CD);
+    return driverinfo(LOC_CD);
   }
 
   @override
@@ -465,9 +467,9 @@ class _$Delete<T> implements Delete<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
-    TResult Function(String LOC_CD)? delete,
+    TResult Function(String LOC_CD)? driverinfo,
   }) {
-    return delete?.call(LOC_CD);
+    return driverinfo?.call(LOC_CD);
   }
 
   @override
@@ -475,11 +477,11 @@ class _$Delete<T> implements Delete<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String SEARCH_KEYWORD)? search,
     TResult Function(String LOC_CD, String LOC_NM)? update,
-    TResult Function(String LOC_CD)? delete,
+    TResult Function(String LOC_CD)? driverinfo,
     required TResult orElse(),
   }) {
-    if (delete != null) {
-      return delete(LOC_CD);
+    if (driverinfo != null) {
+      return driverinfo(LOC_CD);
     }
     return orElse();
   }
@@ -489,9 +491,9 @@ class _$Delete<T> implements Delete<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Search<T> value) search,
     required TResult Function(Update<T> value) update,
-    required TResult Function(Delete<T> value) delete,
+    required TResult Function(Driverinfo<T> value) driverinfo,
   }) {
-    return delete(this);
+    return driverinfo(this);
   }
 
   @override
@@ -499,9 +501,9 @@ class _$Delete<T> implements Delete<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
-    TResult Function(Delete<T> value)? delete,
+    TResult Function(Driverinfo<T> value)? driverinfo,
   }) {
-    return delete?.call(this);
+    return driverinfo?.call(this);
   }
 
   @override
@@ -509,21 +511,21 @@ class _$Delete<T> implements Delete<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Search<T> value)? search,
     TResult Function(Update<T> value)? update,
-    TResult Function(Delete<T> value)? delete,
+    TResult Function(Driverinfo<T> value)? driverinfo,
     required TResult orElse(),
   }) {
-    if (delete != null) {
-      return delete(this);
+    if (driverinfo != null) {
+      return driverinfo(this);
     }
     return orElse();
   }
 }
 
-abstract class Delete<T> implements HomeEvent<T> {
-  const factory Delete(String LOC_CD) = _$Delete<T>;
+abstract class Driverinfo<T> implements HomeEvent<T> {
+  const factory Driverinfo(String LOC_CD) = _$Driverinfo<T>;
 
   String get LOC_CD;
   @JsonKey(ignore: true)
-  $DeleteCopyWith<T, Delete<T>> get copyWith =>
+  $DriverinfoCopyWith<T, Driverinfo<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

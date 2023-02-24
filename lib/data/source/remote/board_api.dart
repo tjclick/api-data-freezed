@@ -13,24 +13,6 @@ class BoardApi {
   static const HUserKey =
       '20230110001003.74819453677458031764608059833657472235';
 
-  //Future<http.Response> getAllList() async {
-  //final response = await _client.get(Uri.parse('$baseUrl/query.php'))
-
-  // POST 방식으로 파라미터 전송;
-  // SPC TMS mobile test(PVC url)
-  // final response = await _client.post(
-  //   Uri.parse('$baseUrl'),
-  //   headers: <String, String>{'USERID': '$HUserID', 'CRTFK': '$HUserKey'},
-  //   body: <String, String>{
-  //     'USERID': 'TESTDRVR',
-  //     //'LOC_CD': '',
-  //     'LOC_NM': '$kWord'
-  //   },
-  // );
-
-  //return response;
-  //}
-
   Future<http.Response> search(String SEARCH_KEYWORD) async {
     if (SEARCH_KEYWORD == '' || SEARCH_KEYWORD.length == 0)
       SEARCH_KEYWORD = '광주';
@@ -44,7 +26,6 @@ class BoardApi {
         'LOC_NM': '$SEARCH_KEYWORD'
       },
     );
-
     return response;
   }
 
@@ -62,9 +43,15 @@ class BoardApi {
     return response;
   }
 
-  Future<http.Response> delete(String LOC_CD) async {
-    final response =
-        await _client.get(Uri.parse('$baseUrl/delete.php?id=$LOC_CD'));
+  Future<http.Response> driverinfo(String LOC_CD) async {
+    final response = await _client.post(
+      Uri.parse('$baseUrl/fetchDriverData'),
+      headers: <String, String>{'USERID': '$HUserID', 'CRTFK': '$HUserKey'},
+      body: <String, String>{
+        "USERID": "S3961",
+      },
+    );
+
     return response;
   }
 }

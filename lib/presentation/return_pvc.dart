@@ -29,16 +29,24 @@ class _ReturnPvcState extends State<ReturnPvc> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () async {},
-            child: ListTile(
-              title: Text(
-                '${Get.arguments["LOC_CD"]}  ${Get.arguments["LOC_NM"]}',
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              subtitle: Text(
-                '출하수량: ${Get.arguments["IN_PVC_CNT"]}  회수수량 ${Get.arguments["OUT_PVC_CNT"]}',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.brown,
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: ListTile(
+                tileColor: Color.fromRGBO(186, 230, 241, 0.494),
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(width: 1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                title: Text(
+                  '${Get.arguments["LOC_CD"]}\n${Get.arguments["LOC_NM"]}',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                subtitle: Text(
+                  '\n● 차량코드 ${Get.arguments["VEH_ID"]}\n● 차량번호 ${Get.arguments["VEH_NO"]}\n● 운송사 ${Get.arguments["CARR_CD"]}\n\n● 출하수량 ${Get.arguments["IN_PVC_CNT"]}\n● 회수수량 ${Get.arguments["OUT_PVC_CNT"]} ',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.brown,
+                  ),
                 ),
               ),
             ),

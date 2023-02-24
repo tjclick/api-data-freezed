@@ -46,16 +46,24 @@ class _HomeScreenState extends State<HomeScreen> {
 
               if (result != null) {}
             },
-            child: ListTile(
-              title: Text(
-                'Code: ${post.LOC_CD}',
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              subtitle: Text(
-                '${post.LOC_NM}',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.brown,
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: ListTile(
+                tileColor: Color.fromRGBO(186, 230, 241, 0.494),
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(width: 1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                title: Text(
+                  'Code: ${post.LOC_CD}',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                subtitle: Text(
+                  '${post.LOC_NM}',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.brown,
+                  ),
                 ),
               ),
             ),

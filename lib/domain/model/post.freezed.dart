@@ -47,9 +47,10 @@ const $Post = _$PostTearOff();
 
 /// @nodoc
 mixin _$Post {
-  String get LOC_CD =>
-      throw _privateConstructorUsedError; //@JsonKey(name: 'update_time') required String updateTime,
-  String get LOC_NM => throw _privateConstructorUsedError;
+  String get LOC_CD => throw _privateConstructorUsedError;
+  String get LOC_NM => throw _privateConstructorUsedError; //String? LOC_CD,
+//String? LOC_NM,
+// update(pvc) api repository
   int? get IN_PVC_CNT => throw _privateConstructorUsedError;
   int? get IN_PBX_CNT => throw _privateConstructorUsedError;
   int? get OUT_PVC_CNT => throw _privateConstructorUsedError;
@@ -181,9 +182,11 @@ class _$_Post implements _Post {
 
   @override
   final String LOC_CD;
-  @override //@JsonKey(name: 'update_time') required String updateTime,
-  final String LOC_NM;
   @override
+  final String LOC_NM;
+  @override //String? LOC_CD,
+//String? LOC_NM,
+// update(pvc) api repository
   final int? IN_PVC_CNT;
   @override
   final int? IN_PBX_CNT;
@@ -242,9 +245,11 @@ abstract class _Post implements Post {
 
   @override
   String get LOC_CD;
-  @override //@JsonKey(name: 'update_time') required String updateTime,
-  String get LOC_NM;
   @override
+  String get LOC_NM;
+  @override //String? LOC_CD,
+//String? LOC_NM,
+// update(pvc) api repository
   int? get IN_PVC_CNT;
   @override
   int? get IN_PBX_CNT;

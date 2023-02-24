@@ -6,8 +6,10 @@ part 'post.g.dart';
 class Post with _$Post {
   factory Post({
     required String LOC_CD,
-    //@JsonKey(name: 'update_time') required String updateTime,
     required String LOC_NM,
+    //String? LOC_CD,
+    //String? LOC_NM,
+    // update(pvc) api repository
     int? IN_PVC_CNT,
     int? IN_PBX_CNT,
     int? OUT_PVC_CNT,
@@ -15,18 +17,3 @@ class Post with _$Post {
 
   factory Post.fromJson(Map<String, dynamic> json) => _$PostFromJson(json);
 }
-
-// class PostReturnBox with _$PostReturnBox {
-//   factory PostReturnBox({
-//     required String LOC_NM,
-//     required String IN_PVC_CNT,
-//     required String IN_PBX_CNT,
-//     required String LOC_CD,
-//     required String OUT_PVC_CNT,
-//   }) = _PostReturnBox;
-
-//   factory PostReturnBox.fromJson(Map<String, dynamic> json) =>
-//       _$PostReturnBoxFromJson(json);
-// }
-
-
